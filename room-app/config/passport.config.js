@@ -1,0 +1,1 @@
+const initialized = require('passport');

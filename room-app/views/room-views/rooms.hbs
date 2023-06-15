@@ -1,0 +1,24 @@
+<h1>Hello!</h1>
+<div>
+  <div>
+    {{#each allRooms}}
+      <h3>{{name}}</h3>
+      <img src="{{imageUrl}}" alt="" />
+      <p>{{description}}</p>
+      <button><a href="/rooms/{{_id}}">View detail</a></button>
+    {{/each}}
+  </div>
+  <div>
+    {{#if loggedIn}}
+      <form action="/new-room" method="post">
+        <label for="text">Name</label>
+        <input type="text" name="name" required />
+        <label for="text">Description</label>
+        <input type="text" name="description" required />
+        <label for="imageUrl">Image</label>
+        <input type="text" name="imageUrl" required />
+        <button type="submit">Create new room</button>
+      </form>
+    {{/if}}
+  </div>
+</div>

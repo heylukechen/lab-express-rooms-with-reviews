@@ -1,0 +1,30 @@
+{{#if ownUser}}
+  <form action="/rooms/{{foundRoom._id}}/edit" method="post">
+    <label for="text">Name</label>
+    <input type="text" name="name" value="{{foundRoom.name}}" required />
+    <label for="text">Description</label>
+    <input
+      type="text"
+      name="description"
+      value="{{foundRoom.description}}"
+      required
+    />
+    <label for="imageUrl">Image</label>
+    <input
+      type="text"
+      name="imageUrl"
+      value="{{foundRoom.imageUrl}}"
+      required
+    />
+    <button type="submit">Update</button>
+  </form>
+
+  <form action="/rooms/{{foundRoom._id}}/delete" method="post">
+    <button>Delete this room</button>
+  </form>
+{{else}}
+  <h3>{{foundRoom.name}}</h3>
+  <img src="{{foundRoom.imageUrl}}" alt="" />
+  <p>{{foundRoom.description}}</p>
+  <p>{{foundRoom.owner}}</p>
+{{/if}}
